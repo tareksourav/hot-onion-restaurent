@@ -15,16 +15,17 @@ const Home = () => {
     return (
         <div className="font-sans">
 
-            <Header></Header>
+
             <Banner></Banner>
             <FoodOption></FoodOption>
+            {/* nested route */}
             <Outlet />
             {/* <BreakFast></BreakFast>
             <Lunch></Lunch>
             <Dinner></Dinner> */}
             <CheckOutFood></CheckOutFood>
             <ReasonToChoose></ReasonToChoose>
-            <Footer></Footer>
+
 
         </div>
     );

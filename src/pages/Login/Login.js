@@ -2,13 +2,21 @@ import React from 'react';
 import logo2 from '../../images/logo2.png'
 import Footer from '../../shared/Footer/Footer';
 import Header from '../../shared/Header/Header';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+// import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+
 
 const Login = () => {
+    // git
+    const { user, SignInWithGoogle } = useAuth();
+    let navigate = useNavigate();
+    // function handleClick() {
+    //     navigate("/home");
+    //   }
+
     return (
         <>
-            <Header></Header>
-
             <div className="login-bg-img ">
 
                 <div className=" grid justify-items-center pb-8">
@@ -46,10 +54,9 @@ const Login = () => {
                             <Link to="/" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" >
                                 Sign In
                             </Link>
-                            <Link to="/" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                                <a className="inline-block align-baseline font-bold text-sm text-white hover:text-white-800" href="#"> <i class="fab fa-google"> </i>
-                                    oogle sign in
-                                </a>
+                            <Link to="" className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                <button onClick={SignInWithGoogle}><i class="fab fa-google"> </i>
+                                    oogle sign in</button>
                             </Link>
 
                         </div>
@@ -58,9 +65,10 @@ const Login = () => {
                         </Link>
                     </form>
 
+
                 </div>
             </div>
-            <Footer></Footer>
+
         </>
 
     );
